@@ -30,7 +30,8 @@
         <script type="text/javascript">
 			var rose = Chart.rose(),
 				height = 600,
-				format = d3.time.format('%m/%Y'),
+				// format = d3.time.format('%m/%Y'),
+				format = d3.timeParse('%m/%Y'),
 				causes = ['disease', 'wounds', 'other'],
 				labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
