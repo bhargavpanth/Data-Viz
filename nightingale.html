@@ -17,7 +17,8 @@
 		<link rel="stylesheet" type="text/css" href="css/nightingale.css">
         <link href='http://fonts.googleapis.com/css?family=Cabin:500' rel='stylesheet' type='text/css'>
 
-        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.10/d3.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
 
     </head>
@@ -30,8 +31,7 @@
         <script type="text/javascript">
 			var rose = Chart.rose(),
 				height = 600,
-				// format = d3.time.format('%m/%Y'),
-				format = d3.timeParse('%m/%Y'),
+				format = d3.time.format('%m/%Y'),
 				causes = ['disease', 'wounds', 'other'],
 				labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -109,20 +109,16 @@
 					.delay( 3000 );
 
 				// Bind the second dataset and generate a new chart:
-				figure.datum( dataset2 )
-					.attr('class', 'chart figure2')
-					.call( rose );	
+				// figure.datum( dataset2 )
+				// 	.attr('class', 'chart figure2')
+				// 	.call( rose );	
 
-				// Append a caption:
-				d3.select('.figure2').append('figcaption')
-					.attr('class', 'caption')
-					.html('The Areas of the blue, red, &amp; black wedges are each measured from the centre as the common vertex <p> The blue wedges measured from the centre of the circle represent area for area the deaths from Preventible or Mitigable Zymotic Diseases, the red wedges measured from the center the deaths from wounds, &amp; the black wedges measured from the center the deaths from all other causes </p><p> In October 1844, &amp; April 1855, the black area coincides with the red, in January &amp; February 1856, the blue coincides with the black </p><p> The entire areas may be compared by following the blue, the red &amp; the black lines enclosing them.</p>');
 
 				// Create a legend:
-				Chart.legend( causes );
+				// Chart.legend( causes );
 
 				// Create a slider:
-				Chart.slider( 0, data.length, 1 ); // minVal, maxVal, step
+				// Chart.slider( 0, data.length, 1 ); // minVal, maxVal, step
 				
 			});	
 

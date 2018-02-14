@@ -8,8 +8,8 @@ Chart.rose = function() {
 		color = 'rgb(0,0,0)',
 		area = function(d) { return [d.y]; },
 		angle = function(d) { return d.x; },
-		radiusScale = d3.scaleLinear(),
-		angleScale = d3.scaleLinear().range( [Math.PI, 3*Math.PI ] ),
+		radiusScale = d3.scale.linear(),
+		angleScale = d3.scale.linear().range( [Math.PI, 3*Math.PI ] ),
 		domain = [0, 1],
 		legend = [''],
 		label = function(d) { return d.label; },
@@ -18,7 +18,7 @@ Chart.rose = function() {
 		canvas, graph, centerX, centerY, numWedges, wedgeGroups, wedges, legendGroup;
 
 	// Arc Generator:
-	var arc = d3.arc()
+	var arc = d3.svg.arc()
 		.innerRadius( 0 )
 		.outerRadius( function(d,i) { return radiusScale( d.radius ); } )
 		.startAngle( function(d,i) { return angleScale( d.angle ); } );
